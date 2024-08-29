@@ -1,4 +1,14 @@
-{:deps {org.clojure/clojure {:mvn/version "1.10.1"}
-                com.datomic/datomic-free {:mvn/version "0.9.5697"}}
- :aliases {:test {:extra-paths ["test"]
-                  :exec-fn friend-relationship-test/run-tests}}}
+{
+    :deps {
+      com.datomic/datomic-free {:mvn/version "0.9.5697"}
+    },
+    :mvn/repos {
+      "my.datomic.com" {:url "https://my.datomic.com/repo"}
+    },
+    :aliases {
+      :test {
+        :extra-paths ["test"]
+        :exec-fn people-relationship-test/-main
+      }
+    }
+  }
